@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/0m0hsam/CSE-341-Project/issues"
   },
-  "homepage": "https://github.com/0m0hsam/CSE-341-Project#readme"
+  "homepage": "https://github.com/0m0hsam/CSE-341-Project#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
