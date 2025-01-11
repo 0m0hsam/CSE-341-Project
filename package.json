@@ -1,0 +1,19 @@
+{
+  "name": "cse-341-project",
+  "version": "1.0.0",
+  "description": "My first project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel  Jonathan",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0m0hsam/CSE-341-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0m0hsam/CSE-341-Project/issues"
+  },
+  "homepage": "https://github.com/0m0hsam/CSE-341-Project#readme"
+}
