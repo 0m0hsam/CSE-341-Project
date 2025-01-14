@@ -1,6 +1,4 @@
-const express = require('express');
-
-const router = express.Router();
+const router= require('express').Router();
 
 // Define your routes here
 router.get('/', (req, res) => {
@@ -11,4 +9,5 @@ router.get('/about', (req, res) => {
     res.send('About us page');
 });
 
+router.use('/users', require('./users'));
 module.exports = router;
