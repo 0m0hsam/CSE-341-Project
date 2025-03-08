@@ -17,8 +17,12 @@
   },
   "homepage": "https://github.com/0m0hsam/CSE-341-Project#readme",
   "dependencies": {
+    "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongodb": "^6.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.18.0"
   }
 }
