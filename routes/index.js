@@ -10,8 +10,9 @@ router.get("/", (req, res) => {
 
 router.get("/about", (req, res) => {
   res.send("About us page");
-router.get('/about', (req, res) => {
-    res.send('Read about us here! ');
+});
+router.get("/about", (req, res) => {
+  res.send("Read about us here! ");
 });
 
 router.use("/users", require("./users"));

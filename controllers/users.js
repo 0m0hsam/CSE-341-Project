@@ -2,7 +2,7 @@ const mongodb = require("../data/database");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = async (req, res) => {
-  const result = await mongodb.getDatabase().db().collection("users").find();
+  const result = await mongodb.getDatabase().collection("users").find();
   result.toArray().then((users) => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(users);
@@ -13,7 +13,6 @@ const getSingle = async (req, res) => {
   const userid = new ObjectId(req.params.id);
   const result = await mongodb
     .getDatabase()
-    .db()
     .collection("users")
     .find({ _id: userid });
   result.toArray().then((users) => {
@@ -31,7 +30,6 @@ const createUser = async (req, res) => {
   };
   const result = await mongodb
     .getDatabase()
-    .db()
     .collection("users")
     .insertOne(user);
   if (result.acknowledged) {
@@ -53,7 +51,6 @@ const updateUser = async (req, res) => {
   };
   const result = await mongodb
     .getDatabase()
-    .db()
     .collection("users")
     .updateOne({ _id: userid }, { $set: user }); // Fixed: Use updateOne instead of replaceOne
 
@@ -70,7 +67,6 @@ const deleteUser = async (req, res) => {
   const userid = new ObjectId(req.params.id);
   const result = await mongodb
     .getDatabase()
-    .db()
     .collection("users")
     .deleteOne({ _id: userid });
 
