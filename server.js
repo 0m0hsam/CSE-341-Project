@@ -1,18 +1,36 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongodb = require('./data/database');
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongodb = require("./data/database");
+const swaggerRoute = require("./routes/swagger"); // Add this line
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use('/', require('./routes'));
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  );
+  next();
+});
+
+app.use("/", require("./routes"));
+app.use("/", swaggerRoute); // Add this line
 
 mongodb.initDb((err) => {
-    if (err) {
-        console.log(err);
-    } else {
-        app.listen(port, () => {
-            console.log(`Database is listening and Server is running on http://localhost:${port}`);
-        });
-    }
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port, () => {
+      console.log(
+        `Database is listening and Server is running on http://localhost:${port}`
+      );
+    });
+  }
 });
