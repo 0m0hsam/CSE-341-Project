@@ -23,10 +23,11 @@ const getSingle = async (req, res) => {
 
 const createUser = async (req, res) => {
   const user = {
-    name: req.body.name,
-    username: req.body.username,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     email: req.body.email,
-    ipaddress: req.body.ipaddress,
+    favoriteColor: req.body.favoriteColor,
+    birthDate: req.body.birthDate,
   };
   const result = await mongodb
     .getDatabase()
@@ -44,10 +45,11 @@ const createUser = async (req, res) => {
 const updateUser = async (req, res) => {
   const userid = new ObjectId(req.params.id);
   const user = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     email: req.body.email,
-    username: req.body.username,
-    name: req.body.name,
-    ipaddress: req.body.ipaddress,
+    favoriteColor: req.body.favoriteColor,
+    birthDate: req.body.birthDate,
   };
   const result = await mongodb
     .getDatabase()

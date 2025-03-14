@@ -5,10 +5,11 @@ PUT http://localhost:3000/users/6785ad2dd21973b135a17f65 HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "davidAdeboye@gmail.com",
-    "name": "David Adeboye",
-     "username": "omohsam81",
-    "Ipaddress": "94.121.168.53"
+  "fistName": "Favour",
+    "lastName": "Jonathan",
+    "email": "fjonathan@byupathway.edu",
+    "birthday": "1996-07-23T00:00:00.000Z",
+    "favoriteColor": "Green"
  }
 
 ###
