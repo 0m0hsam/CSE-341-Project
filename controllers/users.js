@@ -27,7 +27,7 @@ const createUser = async (req, res) => {
     lastName: req.body.lastName,
     email: req.body.email,
     favoriteColor: req.body.favoriteColor,
-    birthDate: req.body.birthDate,
+    birthDay: req.body.birthDay,
   };
   const result = await mongodb
     .getDatabase()
@@ -49,7 +49,7 @@ const updateUser = async (req, res) => {
     lastName: req.body.lastName,
     email: req.body.email,
     favoriteColor: req.body.favoriteColor,
-    birthDate: req.body.birthDate,
+    birthDay: req.body.birthDay,
   };
   const result = await mongodb
     .getDatabase()
